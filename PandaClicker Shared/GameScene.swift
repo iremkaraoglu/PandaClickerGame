@@ -11,7 +11,11 @@ class GameScene: SKScene {
     
     
     fileprivate var label : SKLabelNode?
+    fileprivate var panda : SKSpriteNode?
     fileprivate var spinnyNode : SKShapeNode?
+    let screenSize: CGRect = UIScreen.main.bounds
+    var screenWidth:CGFloat {return screenSize.width}
+    var screenHeight:CGFloat {return screenSize.height}
 
     
     class func newGameScene() -> GameScene {
@@ -28,12 +32,14 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        
+        let panda = SKSpriteNode(imageNamed: "panda")
+        panda.scale(to: CGSize(width: 300, height: 300))
+        panda.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        panda.position = CGPoint(x: screenWidth / 12, y:screenHeight / 12
+        )
+        print("panda", panda.position)
+        self.addChild(panda)
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05

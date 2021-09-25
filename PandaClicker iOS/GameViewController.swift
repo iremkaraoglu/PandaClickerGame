@@ -15,7 +15,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let scene = GameScene.newGameScene()
-
+        print(UIScreen.main.bounds.width)
+        print(UIScreen.main.bounds.height)
         // Present the scene
         let skView = self.view as! SKView
         skView.presentScene(scene)
