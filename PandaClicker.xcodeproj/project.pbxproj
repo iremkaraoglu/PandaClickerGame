@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3081889B2701029C0074937F /* panda_tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3081889A2701029C0074937F /* panda_tap.mp3 */; };
 		308DCC2C26FF165200CF14EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308DCC2B26FF165200CF14EB /* AppDelegate.swift */; };
 		308DCC2E26FF165200CF14EB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308DCC2D26FF165200CF14EB /* GameViewController.swift */; };
 		308DCC3126FF165200CF14EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308DCC2F26FF165200CF14EB /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3081889A2701029C0074937F /* panda_tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = panda_tap.mp3; sourceTree = "<group>"; };
 		308DCC2026FF165100CF14EB /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		308DCC2126FF165100CF14EB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		308DCC2226FF165100CF14EB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		308DCC1F26FF165100CF14EB /* PandaClicker Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3081889A2701029C0074937F /* panda_tap.mp3 */,
 				308DCC2026FF165100CF14EB /* Actions.sks */,
 				308DCC2126FF165100CF14EB /* GameScene.sks */,
 				308DCC2226FF165100CF14EB /* GameScene.swift */,
@@ -142,6 +145,7 @@
 				308DCC3526FF165200CF14EB /* Actions.sks in Resources */,
 				308DCC3426FF165200CF14EB /* LaunchScreen.storyboard in Resources */,
 				308DCC3826FF165200CF14EB /* Assets.xcassets in Resources */,
+				3081889B2701029C0074937F /* panda_tap.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
