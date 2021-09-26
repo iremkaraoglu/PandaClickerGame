@@ -35,6 +35,7 @@ class GameScene: SKScene {
         
         let panda = SKSpriteNode(imageNamed: "panda")
         panda.scale(to: CGSize(width: 300, height: 300))
+        panda.name = "panda"
         panda.anchorPoint = CGPoint(x: 0.5,y: 0.5)
         panda.position = CGPoint(x: screenWidth / 12, y:screenHeight / 12
         )
@@ -101,6 +102,30 @@ extension GameScene {
         for t in touches {
             self.makeSpinny(at: t.location(in: self), color: SKColor.green)
         }
+        if let location = touches.first?.location(in: self) {
+            for node in self.nodes(at: location){
+                if node.name == "panda" {
+                    node.run(SKAction.playSoundFileNamed("panda_tap.mp3", waitForCompletion: true))
+                    getSmallPanda()
+                    return
+                }
+            }
+        }
+    }
+    
+    func getSmallPanda() {
+        let panda = SKSpriteNode(imageNamed: "panda")
+        panda.name = "panda"
+        panda.zPosition = 1
+        panda.anchorPoint = CGPoint(x: 0, y: 0)
+        let randomXPos = CGFloat.random(in: 0..<screenWidth - 72)
+        panda.position = CGPoint(x: randomXPos, y: screenHeight - 50)
+        print(randomXPos, screenHeight - 50)
+        panda.run(.sequence([
+            .moveTo(y: -72, duration: 0.80),
+            .removeFromParent()
+        ]))
+        self.addChild(panda)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
