@@ -37,9 +37,8 @@ class GameScene: SKScene {
         panda.scale(to: CGSize(width: 300, height: 300))
         panda.name = "panda"
         panda.anchorPoint = CGPoint(x: 0.5,y: 0.5)
-        panda.position = CGPoint(x: screenWidth / 12, y:screenHeight / 12
+        panda.position = CGPoint(x: screenWidth / 2, y:screenHeight / 2
         )
-        print("panda", panda.position)
         self.addChild(panda)
         
         // Create shape node to use during mouse interaction
@@ -73,6 +72,7 @@ class GameScene: SKScene {
     }
     #else
     override func didMove(to view: SKView) {
+        self.size = view.bounds.size
         self.setUpScene()
     }
     #endif
@@ -116,11 +116,11 @@ extension GameScene {
     func getSmallPanda() {
         let panda = SKSpriteNode(imageNamed: "panda")
         panda.name = "panda"
+        panda.scale(to: CGSize(width: 100, height: 100))
         panda.zPosition = 1
-        panda.anchorPoint = CGPoint(x: 0, y: 0)
-        let randomXPos = CGFloat.random(in: 0..<screenWidth - 72)
-        panda.position = CGPoint(x: randomXPos, y: screenHeight - 50)
-        print(randomXPos, screenHeight - 50)
+        panda.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        let randomXPos = CGFloat.random(in: 0..<screenWidth)
+        panda.position = CGPoint(x: randomXPos, y: screenHeight)
         panda.run(.sequence([
             .moveTo(y: -72, duration: 0.80),
             .removeFromParent()
