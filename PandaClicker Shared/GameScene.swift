@@ -10,12 +10,13 @@ import SpriteKit
 class GameScene: SKScene {
     
     
-    fileprivate var label : SKLabelNode?
+    fileprivate var countLabel : SKLabelNode?
     fileprivate var panda : SKSpriteNode?
     fileprivate var spinnyNode : SKShapeNode?
     let screenSize: CGRect = UIScreen.main.bounds
     var screenWidth:CGFloat {return screenSize.width}
     var screenHeight:CGFloat {return screenSize.height}
+    var counter: Int = 0
 
     
     class func newGameScene() -> GameScene {
@@ -32,7 +33,13 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        
+        let countLabel = SKLabelNode()
+        countLabel.text = String(counter)
+        countLabel.fontSize = 72
+        countLabel.position = CGPoint(x: screenWidth / 2, y:screenHeight - 150 )
+        countLabel.color = .white
+        self.countLabel = countLabel
+        self.addChild(countLabel)
         let panda = SKSpriteNode(imageNamed: "panda")
         panda.scale(to: CGSize(width: 300, height: 300))
         panda.name = "panda"
@@ -95,7 +102,7 @@ class GameScene: SKScene {
 extension GameScene {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
+        if let label = self.countLabel {
             label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
         }
         
@@ -107,6 +114,8 @@ extension GameScene {
                 if node.name == "panda" {
                     node.run(SKAction.playSoundFileNamed("panda_tap.mp3", waitForCompletion: true))
                     getSmallPanda()
+                    counter += 1
+                    countLabel?.text = String(counter)
                     return
                 }
             }
