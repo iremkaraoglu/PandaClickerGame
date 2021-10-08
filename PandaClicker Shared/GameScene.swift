@@ -112,6 +112,7 @@ extension GameScene {
         if let location = touches.first?.location(in: self) {
             for node in self.nodes(at: location){
                 if node.name == "panda" {
+                    runHaptics()
                     node.run(SKAction.playSoundFileNamed("panda_tap.mp3", waitForCompletion: true))
                     getSmallPanda()
                     counter += 1
@@ -135,6 +136,11 @@ extension GameScene {
             .removeFromParent()
         ]))
         self.addChild(panda)
+    }
+    
+    func runHaptics() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -180,4 +186,3 @@ extension GameScene {
 
 }
 #endif
-
