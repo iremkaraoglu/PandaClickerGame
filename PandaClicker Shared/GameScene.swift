@@ -106,10 +106,28 @@ extension GameScene {
                     getSmallPanda()
                     counter += 1
                     countLabel?.text = String(counter)
+                    
+                    if (counter.isMultiple(of: 10)) {
+                        let generator = UIImpactFeedbackGenerator(style: .heavy)
+                        generator.impactOccurred()
+                        if let myEmitter =  SKEmitterNode(fileNamed: "MagicParticle.sks") {
+                            myEmitter.particleScale = 0.3
+                            myEmitter.position = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
+                            myEmitter.particleZPosition = 1
+                            addChild(myEmitter)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            myEmitter.particleBirthRate = 0
+                            }
+                        }
+                    }                    
                     return
                 }
             }
         }
+        
+    }
+    func newSmokeEmitter() -> SKEmitterNode? {
+        return SKEmitterNode(fileNamed: "MagicParticle.sks")
     }
     
     func getSmallPanda() {

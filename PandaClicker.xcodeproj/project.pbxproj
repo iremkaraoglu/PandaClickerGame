@@ -16,6 +16,8 @@
 		308DCC3626FF165200CF14EB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 308DCC2126FF165100CF14EB /* GameScene.sks */; };
 		308DCC3726FF165200CF14EB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308DCC2226FF165100CF14EB /* GameScene.swift */; };
 		308DCC3826FF165200CF14EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308DCC2326FF165200CF14EB /* Assets.xcassets */; };
+		30BCE3D92711F3C900D4015C /* MagicParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 30BCE3D72711F3C900D4015C /* MagicParticle.sks */; };
+		30BCE3DA2711F3C900D4015C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BCE3D82711F3C900D4015C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		308DCC2D26FF165200CF14EB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		308DCC3026FF165200CF14EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		308DCC3326FF165200CF14EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30BCE3D72711F3C900D4015C /* MagicParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagicParticle.sks; sourceTree = "<group>"; };
+		30BCE3D82711F3C900D4015C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 		308DCC1A26FF165100CF14EB = {
 			isa = PBXGroup;
 			children = (
+				30BCE3D72711F3C900D4015C /* MagicParticle.sks */,
+				30BCE3D82711F3C900D4015C /* Assets.xcassets */,
 				308DCC1F26FF165100CF14EB /* PandaClicker Shared */,
 				308DCC2A26FF165200CF14EB /* PandaClicker iOS */,
 				308DCC2926FF165200CF14EB /* Products */,
@@ -140,11 +146,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BCE3D92711F3C900D4015C /* MagicParticle.sks in Resources */,
 				308DCC3626FF165200CF14EB /* GameScene.sks in Resources */,
 				308DCC3126FF165200CF14EB /* Main.storyboard in Resources */,
 				308DCC3526FF165200CF14EB /* Actions.sks in Resources */,
 				308DCC3426FF165200CF14EB /* LaunchScreen.storyboard in Resources */,
 				308DCC3826FF165200CF14EB /* Assets.xcassets in Resources */,
+				30BCE3DA2711F3C900D4015C /* Assets.xcassets in Resources */,
 				3081889B2701029C0074937F /* panda_tap.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
